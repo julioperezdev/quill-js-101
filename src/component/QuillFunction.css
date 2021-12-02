@@ -1,0 +1,19 @@
+.estilo-quill{
+    background-color: rgb(231, 214, 214);
+    width: 1000px;
+    height: 200px;
+    border-radius: 20px;
+    display: grid;
+    margin: auto;
+    color: rgb(27, 27, 39);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: 10px solid rgb(81, 81, 82);
+}
+
+.button-to-send{
+    padding: 10px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    display: grid;
+    margin: 30px auto;
+}

@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+
+import QuillComponent from "./component/Quill"
+import QuillFunction from "./component/QuillFunction";
+import TextComponent from "./component/TextComponent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* <QuillComponent/> */}
+      <QuillFunction/>
+      <TextComponent/>
     </div>
   );
 }
