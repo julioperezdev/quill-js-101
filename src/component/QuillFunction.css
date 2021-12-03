@@ -8,6 +8,7 @@
     color: rgb(27, 27, 39);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     border: 10px solid rgb(81, 81, 82);
+    overflow-y: auto;
 }
 
 .button-to-send{
