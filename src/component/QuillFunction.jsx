@@ -13,6 +13,8 @@ const QuillFunction = () =>{
   const [numberClass, setNumberClass] = useState(null)
   const [text, setText] = useState('')
   const [title, setTitle] = useState('')
+  
+  const allFormats = ["background","color", "header", "bold", "italic", "underline", "align"]
 
   const textHandleChange = (value) => {
     console.log(value)
@@ -70,13 +72,15 @@ const QuillFunction = () =>{
     
   }
 
+  
 
   return (
     <div>
         <ReactQuill className="estilo-quill" 
-      value={text}
-      onChange={(e) => textHandleChange(e)} 
-      theme="snow"/>
+        value={text}
+        onChange={(e) => textHandleChange(e)} 
+        //formats={allFormats}
+        theme="snow"/>
       
       {/* <form action="" onSubmit={handleSubmit(sendToDatabase)}> */}
       <input 

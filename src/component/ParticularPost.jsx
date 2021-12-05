@@ -1,12 +1,18 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useContext} from "react"
 import axios from "axios"
 import ReactQuill from 'react-quill';
 import "./PostRepository.css"
+import {useParams} from "react-router-dom"
+import PostContext from "../context/post/PostContext";
 
 const ParticularPost = () =>{
 
-  const [value, setValue] = useState(false)
-  const [list, setList] = useState([])
+
+  //const {getPostByNumberClass, title, numberClass, text} = useContext(PostContext)
+
+  const {classNumber} = useParams();
+  const [post, setPost] = useState(null)
+  const [info, setInfo] = useState(false)
 
 //   const getAllPost = async() =>{
     
@@ -19,28 +25,35 @@ const ParticularPost = () =>{
 
 //     })
     
-  useEffect(() =>{
-    const search = window.location.search;
-    const params = new URLSearchParams(search).toString;
-    //const foo = params.get('id');
-    console.log(params)
+const getPostByNumberClass = async(numberClass) =>{
+
+  //const response = await HttpClient.get(`/post/getby/id/${numberClass}`)
+  const response = await axios.get(`/post/getby/class/${numberClass}`)
+  console.log(response)
+  setPost(response.data)
+  setInfo(true)
+
+  }
+
+
+  useEffect(async() =>{
+   await getPostByNumberClass (classNumber)
   },[])
 
   return (
-    <div>
-        <ReactQuill 
-            className = "readonly-style"
-            value={"Hola"}
-            readOnly={true}
-            theme={"bubble"}
-            ></ReactQuill>
-            {/* <ReactQuill 
-            className = "readonly-style"
-            value={post.text}
-            readOnly={true}
-            theme={"bubble"}
-            ></ReactQuill> */}
-    </div>
+    <>
+      {!info? 
+      <p>No ha llegado la informacion</p> :
+      <div className="particular-post">
+        <h1>{post.title}</h1>
+        <h3>leccion #{post.numberClass}</h3>
+        <ReactQuill
+          className="readonly-style"
+          value={post.text}
+          readOnly={true}
+          theme={"bubble"} />
+      </div>}
+    </>
   )
 }
 

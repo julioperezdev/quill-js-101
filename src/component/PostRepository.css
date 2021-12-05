@@ -1,3 +1,42 @@
 .readonly-style{
     color : red;
 }
+
+.each-post{
+    border: 3px solid black;
+    margin: 10px;
+    display: grid;
+    grid-template-columns: 10% 75% 10%;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgb(202, 202, 202) 10px 10px 10px;
+}
+
+.each-post-number{
+    background-color: rgb(229, 231, 223);
+    text-align: center;
+    border-radius: 20px;
+    border:2px solid rgb(107, 167, 107);
+    margin: auto 10px;
+}
+
+.each-post-link{
+    text-decoration: none;
+    color: rgb(34, 33, 33);
+    font-size: 20px;
+    border: 3px solid rgb(30, 44, 30);
+    border-radius: 20px;
+    text-align: center;
+    
+}
+
+.each-post-link:hover{
+    
+    background-color: honeydew;
+}
+
+.particular-post{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}

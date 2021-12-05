@@ -1,0 +1,9 @@
+.all-links{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+    justify-items: center;
+    text-decoration: none;
+    color: rgb(36, 35, 35);
+    
+
+}
