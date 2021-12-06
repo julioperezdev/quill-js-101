@@ -1,7 +1,7 @@
 .estilo-quill{
     background-color: rgb(231, 214, 214);
     width: 1000px;
-    height: 200px;
+    
     border-radius: 20px;
     display: grid;
     margin: auto;
@@ -11,6 +11,16 @@
     overflow-y: auto;
 }
 
+.ql-toolbar{
+    background-color: rgb(224, 228, 192);
+    height: 50px;
+}
+
+.ql-editor{
+    height: 500px;
+    padding: 20px 100px;
+}
+
 .button-to-send{
     padding: 10px 30px;
     font-size: 18px;
@@ -18,3 +28,37 @@
     display: grid;
     margin: 30px auto;
 }
+
+
+.estilo-quill iframe{
+    border-radius: 10px;
+    text-align: center;
+    width: 720px;
+    height: 400px;
+    margin: 0 auto ;
+}
+
+.estilo-quill img{
+    display: grid;
+    border-radius: 10px;
+    width: 720px;
+    height: 400px;
+    margin: 0 auto ;
+    justify-content: center;
+}
+
+
+.quill-function-input{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, 50%);
+    width: 400px;
+    margin: 10px auto;
+}
+
+
+.quill-function-input input{
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+

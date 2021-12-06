@@ -16,6 +16,24 @@ const QuillFunction = () =>{
   
   const allFormats = ["background","color", "header", "bold", "italic", "underline", "align"]
 
+
+  const modules = {
+    toolbar: [
+      [{ 'header': [1, 2, 3, 4,false] }],
+      ['bold', 'italic', 'underline','strike', 'blockquote'],
+      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+  }
+
+  const formats = [
+    'header',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image', 'video','clean'
+  ]
+
   const textHandleChange = (value) => {
     console.log(value)
     setText(value)
@@ -79,23 +97,24 @@ const QuillFunction = () =>{
         <ReactQuill className="estilo-quill" 
         value={text}
         onChange={(e) => textHandleChange(e)} 
-        //formats={allFormats}
+        modules={modules}
+        formats={formats}
         theme="snow"/>
       
-      {/* <form action="" onSubmit={handleSubmit(sendToDatabase)}> */}
-      <input 
-      //{...register("title")}
-      placeholder="title"
-      onChange={(e) => titleHandleChange(e)}
-      value={title}
-      />
-      <input 
-     //  {...register("numberClass")}
-      placeholder="number class"
-      onChange={(e) => numberClassHandleChange(e)}
-      value={numberClass}
-      />
-      
+      <div className="quill-function-input">
+        <input 
+        //{...register("title")}
+        placeholder="title"
+        onChange={(e) => titleHandleChange(e)}
+        value={title}
+        />
+        <input 
+      //  {...register("numberClass")}
+        placeholder="number class"
+        onChange={(e) => numberClassHandleChange(e)}
+        value={numberClass}
+        />
+      </div>
       <button
       onClick={() => sendToDatabase()} 
       className="button-to-send"
